@@ -1,0 +1,58 @@
+{
+  "model_name": "Random Forest",
+  "features": [
+    "area_sqft",
+    "bedrooms",
+    "bathrooms",
+    "property_age",
+    "parking",
+    "location",
+    "property_type"
+  ],
+  "numeric_features": [
+    "area_sqft",
+    "bedrooms",
+    "bathrooms",
+    "property_age",
+    "parking"
+  ],
+  "categorical_features": [
+    "location",
+    "property_type"
+  ],
+  "locations": [
+    "Angul",
+    "Balasore",
+    "Berhampur",
+    "Bhubaneswar",
+    "Cuttack",
+    "Jharsuguda",
+    "Kendrapara",
+    "Khordha",
+    "Puri",
+    "Rourkela",
+    "Sambalpur"
+  ],
+  "property_types": [
+    "Apartment",
+    "Independent House"
+  ],
+  "metrics": [
+    {
+      "model": "Linear Regression",
+      "MAE_INR": 1347776.94,
+      "RMSE_INR": 1595562.44,
+      "R2": 0.6796
+    },
+    {
+      "model": "Random Forest",
+      "MAE_INR": 807550.0,
+      "RMSE_INR": 997283.4,
+      "R2": 0.8748
+    }
+  ],
+  "training_rows": 22,
+  "testing_rows": 8,
+  "currency": "INR",
+  "dataset_notice": "Synthetic demo data; not verified market data."
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odisha Real Estate Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">MACHINE LEARNING PROJECT</p>
+      <h1>Odisha Real Estate Price Prediction</h1>
+      <p>Enter property details to get an estimated price.</p>
+    </header>
+
+    <section class="panel">
+      <form id="predictionForm" action="{{ url_for('predict') }}" method="POST">
+        <div class="field">
+          <label for="location">Location</label>
+          <select id="location" name="location" required>
+            {% for loc in locations %}
+            <option value="{{ loc }}" {% if submitted and submitted.get('location') == loc %}selected{% endif %}>{{ loc }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="property_type">Property type</label>
+          <select id="property_type" name="property_type" required>
+            {% for kind in property_types %}
+            <option value="{{ kind }}" {% if submitted and submitted.get('property_type') == kind %}selected{% endif %}>{{ kind }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="area_sqft">Area (sq.ft)</label>
+          <input id="area_sqft" name="area_sqft" type="number" min="1" max="50000" step="1" placeholder="e.g. 1200" value="{{ submitted.get('area_sqft', '') if submitted else '' }}" required>
+        </div>
+        <div class="field">
+          <label for="bedrooms">Bedrooms</label>
+          <input id="bedrooms" name="bedrooms" type="number" min="0" max="20" value="{{ submitted.get('bedrooms', 2) if submitted else 2 }}" required>
+        </div>
+        <div class="field">
+          <label for="bathrooms">Bathrooms</label>
+          <input id="bathrooms" name="bathrooms" type="number" min="0" max="20" value="{{ submitted.get('bathrooms', 2) if submitted else 2 }}" required>
+        </div>
+        <div class="field">
+          <label for="property_age">Property age (years)</label>
+          <input id="property_age" name="property_age" type="number" min="0" max="150" value="{{ submitted.get('property_age', 5) if submitted else 5 }}" required>
+        </div>
+        <div class="field">
+          <label for="parking">Parking spaces</label>
+          <input id="parking" name="parking" type="number" min="0" max="5" value="{{ submitted.get('parking', 1) if submitted else 1 }}" required>
+        </div>
+        <button type="submit">Predict Price</button>
+      </form>
+
+      {% if prediction %}
+      <div class="result success" role="status">
+        <span>Estimated property price</span>
+        <strong>{{ prediction }}</strong>
+        <small>This is a model estimate, not a formal property valuation.</small>
+      </div>
+      {% endif %}
+      {% if error %}
+      <div class="result error" role="alert">{{ error }}</div>
+      {% endif %}
+    </section>
+    <p class="notice"><strong>Demo-data notice:</strong> This learning project currently uses synthetic sample records, not verified market prices. Do not rely on its prediction for buying, selling, lending, or investment decisions.</p>
+    <footer>Built with Python · Flask · Scikit-learn</footer>
+  </main>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

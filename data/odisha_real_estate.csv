@@ -1,0 +1,31 @@
+location,area_sqft,bedrooms,bathrooms,property_age,parking,property_type,price_inr
+Bhubaneswar,1200,2,2,5,1,Apartment,5200000
+Bhubaneswar,1500,3,2,4,1,Apartment,6900000
+Bhubaneswar,1800,3,3,2,1,Independent House,9800000
+Bhubaneswar,950,2,1,10,0,Apartment,3900000
+Cuttack,1100,2,2,7,1,Apartment,4300000
+Cuttack,1600,3,2,5,1,Independent House,6200000
+Cuttack,900,2,1,12,0,Apartment,3200000
+Puri,1000,2,2,6,1,Apartment,4600000
+Puri,1450,3,2,3,1,Independent House,7800000
+Puri,800,1,1,9,0,Apartment,3000000
+Khordha,1250,2,2,5,1,Apartment,4400000
+Khordha,1700,3,2,4,1,Independent House,6500000
+Sambalpur,1300,2,2,6,1,Apartment,4100000
+Sambalpur,1750,3,3,3,1,Independent House,6800000
+Rourkela,1150,2,2,8,1,Apartment,3800000
+Rourkela,1550,3,2,5,1,Independent House,5900000
+Berhampur,1050,2,1,7,0,Apartment,3400000
+Berhampur,1650,3,2,4,1,Independent House,6100000
+Balasore,1000,2,2,8,1,Apartment,3300000
+Balasore,1500,3,2,5,1,Independent House,5400000
+Angul,1200,2,2,6,1,Apartment,3600000
+Angul,1800,3,3,3,1,Independent House,6300000
+Jharsuguda,1150,2,2,6,1,Apartment,3700000
+Jharsuguda,1600,3,2,4,1,Independent House,5800000
+Kendrapara,900,2,1,10,0,Apartment,2600000
+Kendrapara,1400,3,2,6,1,Independent House,4300000
+Bhubaneswar,2200,4,3,1,2,Independent House,13200000
+Cuttack,2000,4,3,2,2,Independent House,9400000
+Puri,1900,4,3,2,2,Independent House,11500000
+Sambalpur,850,1,1,15,0,Apartment,2400000
